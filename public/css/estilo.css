@@ -1,8 +1,13 @@
 .bg-azulclaro {
-    background-color: #86F0F3 !important;
+    background-color: #6DCED1 !important;
 }
 
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
+
+.gradient-azulescuro{
+    background: rgb(34,193,195);
+    background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(57,180,182,1) 22%, rgba(62,177,179,1) 36%, rgba(67,174,176,1) 48%, rgba(72,171,173,1) 64%, rgba(79,167,170,1) 100%); 
+}
