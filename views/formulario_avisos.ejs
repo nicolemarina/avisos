@@ -2,8 +2,11 @@
  
 <body>
   <div class="container">
-    <h1 class="alert alert-primary"> <span class="material-icons"> campaign </span>
-       Formulário de Cadastro de Avisos </h1>
+    
+    <a href="https://"> <span class="material-icons">
+      west
+      </span> Voltar</a>
+      <br> 
 
 <br>
 <% if (typeof msg !== 'undefined') { %>
@@ -22,32 +25,45 @@
 
 <% } %>
 
-   <form action="/avisos/novo" method="POST">
-    <div class="form-group row">
-      <label for="titulo" class="col-4 col-form-label">Titulo</label> 
-      <div class="col-8">
-        <input id="titulo" name="titulo" type="text" class="form-control">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="data" class="col-4 col-form-label">Data</label> 
-      <div class="col-8">
-        <input id="data" name="data" type="text" class="form-control">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-4 col-form-label" for="mensagem">Mensagem</label> 
-      <div class="col-8">
-        <input id="mensagem" name="mensagem" type="text" class="form-control">
-      </div>
-    </div> 
-    <div class="form-group row">
-      <div class="offset-4 col-8">
-        <button name="submit" type="submit" class="btn btn-primary">Salvar</button>
-      </div>
-    </div>
-  </form>
-</div>
+  
+    <div class="card shadow">
+      <div class="card-header bg-azulclaro pl-5 p-4">
+        <h2 class="card-title"> 
+          <span class="material-icons md-36">
+          campaign
+          </span> Novo Aviso </h2> </div>
+        <div class="card-body p-5">
+          
+            <form action="/avisos/novo" method="POST">
+              <div class="form-group row">
+                <label for="titulo" class="col-4 col-form-label">Titulo</label> 
+                <div class="col-8">
+                  <input id="titulo" name="titulo" type="text" class="form-control" required placeholder="Digite o título do aviso">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="data" class="col-4 col-form-label">Data</label> 
+                <div class="col-8">
+                  <input id="data" name="data" type="date" class="form-control" placeholder="Digite a data do aviso">
+                </div>
+              </div>
+              <div class="form-group row" id="mensagem">
+                <label class="col-4 col-form-label" for="mensagem">Mensagem</label> 
+                <div class="col-12">
+                  <input style="min-height:100px;min-width:1013px;" name="mensagem" type="text" class="form-control" placeholder="Digite detalhes sobre o aviso">
+                </div>
+              </div> 
+              <div class="form-group row">
+                <div class="offset-4 col-8 text-right">
+                  <button name="submit" type="submit" class="btn btn-secondary">Limpar</button>
+                  <button name="submit" type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+              </div>
+            </form>
+          </div> <!--card body-->
+      </div> <!--card-->
+    </div> <!--container -->
+
 <%- include('./partials/scripts_import') %> <!-- Incluindo Bootstrap -->
   </body>
 
