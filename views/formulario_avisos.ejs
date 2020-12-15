@@ -7,9 +7,19 @@
 
 <br>
 <% if (typeof msg !== 'undefined') { %>
-<div class="alert alert-success" role="alert">
-  <%= msg.corpo %> 
-</div>
+  
+  <% if (msg.tipo === "sucesso") { %>
+    <div class="alert alert-success" role="alert">
+      <%= msg.corpo %> 
+    </div>
+  <% } %> <!-- fim sucesso -->
+
+  <% if (msg.tipo === "erro") { %>
+    <div class="alert alert-danger" role="alert">
+      <%= msg.corpo %> 
+    </div>
+  <% } %> <!-- fim erro -->
+
 <% } %>
 
    <form action="/avisos/novo" method="POST">

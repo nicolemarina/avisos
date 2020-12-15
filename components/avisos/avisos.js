@@ -1,12 +1,10 @@
 //teste insert
 const db = require('../../knexfile.js')
 
-async function salvar(aviso){
+ function salvar(aviso){
     //insert
-    
-    let retorno
-    await db.insert(aviso).into('avisos').then(id=>{
-        retorno = { tipo: "sucesso", corpo: "Dados inseridos com sucesso!"}
+    return db.insert(aviso).into('avisos').then(id=>{
+       return { tipo: "sucesso", corpo: "Dados inseridos com sucesso!"}
         //teste = id
     })
     
@@ -14,7 +12,6 @@ async function salvar(aviso){
             return { tipo: "erro", corpo: "Erro: "+erro}
            // teste = erro
         })
-        return retorno
 } //fim salvar
 
 module.exports = {salvar}
