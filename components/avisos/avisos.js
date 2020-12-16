@@ -10,9 +10,17 @@ const db = require('../../knexfile.js')
     
         .catch(erro => {
             return { tipo: "erro", corpo: "Erro: "+erro}
-           // teste = erro
         })
 } //fim salvar
 
-module.exports = {salvar}
+    function selecionarTodos(){
+        return db.select('*').from('avisos').then(avisos =>{
+            return avisos
+        })
+        .catch(erro => {
+            return { tipo: "erro", corpo: "Erro: "+erro}
+        })
+    } //fim selecionarTodos
+
+module.exports = {salvar, selecionarTodos}
 

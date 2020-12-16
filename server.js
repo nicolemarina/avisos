@@ -9,6 +9,8 @@ const app = express() //iniciar express
 app.set('view engine', 'ejs') //configura engine
 app.use(express.static('public')) //configura pasta pública
 
+app.locals.moment = require('moment')
+
 app.use(bodyParser.urlencoded({extended:false})) // configura bodyParses
 app.use(bodyParser.json())
 
